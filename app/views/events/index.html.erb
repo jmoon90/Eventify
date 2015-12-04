@@ -1,0 +1,11 @@
+Events
+
+<% @events["events"].each do |event| %>
+  <div>
+    <p><%= event["title"] %></p>
+    <p><%= event["url"] %></p>
+    <% event["performers"].select do |performer| %>
+      <img src="<%= performer['image'] %>">
+    <% end %>
+  </div>
+<% end %>
