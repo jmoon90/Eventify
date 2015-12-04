@@ -29,7 +29,8 @@ group :production do
   gem 'rails_12factor'
 end
 
-######
-# External Gems
-######
+# styling
 gem 'bootstrap-sass', '~> 3.3.6'
+
+# http calls
+gem "typhoeus"
