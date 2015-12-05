@@ -1,13 +1,16 @@
+
 <div class="container marketing">
-  <div class="row">
-    <% @events["events"].each do |event| %>
-      <div class="col-lg-4">
-        <% event["performers"].select do |performer| %>
-          <a href='<%= event["url"] %>'><img src="<%= performer['image'] || 'https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tommy-castro-91e9a3/7314/huge.jpg' %>"></a>
-        <% end %>
-        <h2><%= event["title"] %></h2>
-        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-      </div>
-    <% end %>
-  </div>
+  <% @events_in_groups.each do |groups_of_three_events| %>
+    <div class="row">
+      <% groups_of_three_events.each do |event| %>
+        <div class="col-lg-4">
+          <% event["performers"].detect do |performer| %>
+            <a href='<%= event["url"] %>'><img src="<%= performer['image'] || 'https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tommy-castro-91e9a3/7314/huge.jpg' %>"></a>
+          <% end %>
+          <h2><%= event["title"] %></h2>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
+

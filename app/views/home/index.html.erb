@@ -4,64 +4,38 @@
 
       <div class="inner cover">
         <h1 class="cover-heading">Eventify</h1>
-        <p class="lead">Find events for the amount of people you plan on going with</p>
+        <p class="lead">Events for Month x Number of people x State x Event type</p>
       </div>
 
       <div class="inner cover">
-
         <%= form_tag(events_path, :method => "get") do %>
-          <%= label_tag(:number_of_tickets, "Number of Tickets:") %>
-          <%= select_tag(:number_of_tickets, options_for_select(@number_of_tickets)) %>
+          <%# <%= label_tag(:number_of_tickets, "Number of Tickets:") %>
+          <%# <%= select_tag(:number_of_tickets, options_for_select(@number_of_tickets)) %>
           <br>
-          <%= label_tag(:month_of_the_year, "Event Month") %>
-          <%= select_tag(:month_of_the_year, options_for_select(@month_of_the_year)) %>
+          <%= label_tag(:month_of_the_year, "What MONTH do you want to attend an event?") %>
           <br>
-
+          <%= select_tag(:month_of_the_year, options_for_select(@month_of_the_year.collect{ |u| [ u[:name], u[:value] ] })) %>
+          <br>
+          <%= label_tag(:state, "What State?") %>
+          <br>
+          <%= select_tag(:state, options_for_select(@state.collect{ |u| [ u[:state_name] ] })) %>
+          <br>
+          <%= label_tag(:listing_count, "How many people?") %>
+          <br>
+          <%= select_tag(:listing_count, options_for_select(@listing_count.collect{ |u| [ u[:listing_count] ] })) %>
+          <br>
+          <%= label_tag(:event_type, "What Type of Event would you like to see?") %>
+          <br>
+          <%= select_tag(:event_type, options_for_select(@event_type.collect{ |u| [ u['name'] ] })) %>
+          <br>
+          <br>
           <%= submit_tag("Search") %>
         <% end %>
         <br>
-
-        <!-- <form action='/events'> -->
-        <!--   Number of Tickets:<br> -->
-        <!--   <select> -->
-        <!--     <option name='one' value="one">1</option> -->
-        <!--     <option value="two">2</option> -->
-        <!--     <option value="three">3</option> -->
-        <!--     <option value="four">4</option> -->
-        <!--     <option value="five">5</option> -->
-        <!--     <option value="six">6</option> -->
-        <!--     <option value="seven">7</option> -->
-        <!--     <option value="eight">8</option> -->
-        <!--   </select> -->
-        <!--   <br> -->
-        <!--   What Month Do You Want To Attend an Event?:<br> -->
-        <!--   <select> -->
-        <!--     <option value="january">Jan 2016</option> -->
-        <!--     <option value="feburary">Feb 2016</option> -->
-        <!--     <option value="march">Mar 2016</option> -->
-        <!--     <option value="april">Apr 2016</option> -->
-        <!--     <option value="may">May 2016</option> -->
-        <!--     <option value="june">Jun 2016</option> -->
-        <!--     <option value="july">Jul 2016</option> -->
-        <!--     <option value="august">Aug 2016</option> -->
-        <!--     <option value="september">Sep 2016</option> -->
-        <!--     <option value="october">Oct 2016</option> -->
-        <!--     <option value="november">Nov 2016</option> -->
-        <!--     <option value="december">Dec 2016</option> -->
-        <!--   </select> -->
-        <!--   <br> -->
-        <!--   Where are you based off? <br> -->
-        <!--   <select> -->
-        <!--     <option value="la">Los Angelos</option> -->
-        <!--   </select> -->
-        <!--   <br> -->
-        <!--   <input type="submit" value="Submit"> -->
-        <!-- </form> -->
-
       </div>
 
       <div class="mastfoot">
-          <p>Eventify by <%= link_to "John Moon" %></p>
+          <p>Eventify by <%= link_to "John Moon", 'https://www.linkedin.com/in/jmoon90' %></p>
       </div>
 
     </div>
