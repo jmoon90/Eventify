@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'events#index'
+  root 'home#index'
   resources :events
+  resources :home, only: [:index]
 end

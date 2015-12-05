@@ -1,0 +1,69 @@
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+
+      <div class="inner cover">
+        <h1 class="cover-heading">Eventify</h1>
+        <p class="lead">Find events for the amount of people you plan on going with</p>
+      </div>
+
+      <div class="inner cover">
+
+        <%= form_tag(events_path, :method => "get") do %>
+          <%= label_tag(:number_of_tickets, "Number of Tickets:") %>
+          <%= select_tag(:number_of_tickets, options_for_select(@number_of_tickets)) %>
+          <br>
+          <%= label_tag(:month_of_the_year, "Event Month") %>
+          <%= select_tag(:month_of_the_year, options_for_select(@month_of_the_year)) %>
+          <br>
+
+          <%= submit_tag("Search") %>
+        <% end %>
+        <br>
+
+        <!-- <form action='/events'> -->
+        <!--   Number of Tickets:<br> -->
+        <!--   <select> -->
+        <!--     <option name='one' value="one">1</option> -->
+        <!--     <option value="two">2</option> -->
+        <!--     <option value="three">3</option> -->
+        <!--     <option value="four">4</option> -->
+        <!--     <option value="five">5</option> -->
+        <!--     <option value="six">6</option> -->
+        <!--     <option value="seven">7</option> -->
+        <!--     <option value="eight">8</option> -->
+        <!--   </select> -->
+        <!--   <br> -->
+        <!--   What Month Do You Want To Attend an Event?:<br> -->
+        <!--   <select> -->
+        <!--     <option value="january">Jan 2016</option> -->
+        <!--     <option value="feburary">Feb 2016</option> -->
+        <!--     <option value="march">Mar 2016</option> -->
+        <!--     <option value="april">Apr 2016</option> -->
+        <!--     <option value="may">May 2016</option> -->
+        <!--     <option value="june">Jun 2016</option> -->
+        <!--     <option value="july">Jul 2016</option> -->
+        <!--     <option value="august">Aug 2016</option> -->
+        <!--     <option value="september">Sep 2016</option> -->
+        <!--     <option value="october">Oct 2016</option> -->
+        <!--     <option value="november">Nov 2016</option> -->
+        <!--     <option value="december">Dec 2016</option> -->
+        <!--   </select> -->
+        <!--   <br> -->
+        <!--   Where are you based off? <br> -->
+        <!--   <select> -->
+        <!--     <option value="la">Los Angelos</option> -->
+        <!--   </select> -->
+        <!--   <br> -->
+        <!--   <input type="submit" value="Submit"> -->
+        <!-- </form> -->
+
+      </div>
+
+      <div class="mastfoot">
+          <p>Eventify by <%= link_to "John Moon" %></p>
+      </div>
+
+    </div>
+  </div>
+</div>
