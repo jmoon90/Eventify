@@ -1,16 +1,21 @@
-
 <div class="container marketing">
-  <% @events_in_groups.each do |groups_of_three_events| %>
-    <div class="row">
-      <% groups_of_three_events.each do |event| %>
-        <div class="col-lg-4">
-          <% event["performers"].detect do |performer| %>
-            <a href='<%= event["url"] %>'><img src="<%= performer['image'] || 'https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tommy-castro-91e9a3/7314/huge.jpg' %>"></a>
-          <% end %>
-          <h2><%= event["title"] %></h2>
-        </div>
-      <% end %>
-    </div>
+  <% if @events_in_groups.empty? %>
+
+    <h2> Looks like there are no <%= @params['event_type'] %> events for <%= @params['month_of_the_year'] %></h3>
+    <h4><%= link_to 'Restart', root_path(@params) %></h4>
+
+  <% else %>
+    <% @events_in_groups.each do |groups_of_three_events| %>
+      <div class="row">
+        <% groups_of_three_events.each do |event| %>
+          <div class="col-lg-4">
+            <% event["performers"].detect do |performer| %>
+              <a href='<%= event["url"] %>'><img src="<%= performer['image'] || 'https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tommy-castro-91e9a3/7314/huge.jpg' %>"></a>
+            <% end %>
+            <h2><%= event["title"] %></h2>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>
-
