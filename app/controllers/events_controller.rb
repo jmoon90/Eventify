@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  SEATGEEK_BASE_URL = 'http://api.seatgeek.com/2/events'
   def index
     events = events_list
 
@@ -18,7 +19,7 @@ class EventsController < ApplicationController
   end
 
   def seat_geek_service
-    @seat_geek_service = SeatGeekService.new(base_url: 'http://api.seatgeek.com/2/events',
+    @seat_geek_service = SeatGeekService.new(base_url: SEATGEEK_BASE_URL,
                                              month_of_the_year: params['month_of_the_year'],
                                              state: params['state'],
                                              listing_count: params['listing_count'],

@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  SEATGEEK_BASE_URL = 'http://api.seatgeek.com/2/taxonomies'
   def index
     @month_of_the_year = month_of_the_year
     @number_of_tickets = number_of_tickets
@@ -60,7 +61,7 @@ class HomeController < ApplicationController
   end
 
   def event_type
-    @seat_geek_service = SeatGeekService.new(base_url: 'http://api.seatgeek.com/2/taxonomies')
+    @seat_geek_service = SeatGeekService.new(base_url: SEATGEEK_BASE_URL)
     @seat_geek_service.run['taxonomies']
   end
 end
