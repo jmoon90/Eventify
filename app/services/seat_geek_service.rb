@@ -1,10 +1,10 @@
 class SeatGeekService
 
-  def initialize(base_url:, month_of_the_year: nil, state: nil, listing_count: nil, event_type: nil)
+  def initialize(base_url:, month_of_the_year: nil, state: nil, attendee_count: nil, event_type: nil)
     @base_url = base_url
     @month_of_the_year = month_of_the_year
     @state = state
-    @listing_count = listing_count
+    @attendee_count = attendee_count
     @event_type = event_type
   end
 
@@ -19,7 +19,7 @@ class SeatGeekService
 
   private
 
-  attr_accessor :month_of_the_year, :state, :listing_count, :event_type, :base_url
+  attr_accessor :month_of_the_year, :state, :attendee_count, :event_type, :base_url
 
   def build_query
     query = ""
@@ -29,8 +29,8 @@ class SeatGeekService
     if state
       query = query + location_query(state)
     end
-    if listing_count
-      query = query + listing_count_query(listing_count)
+    if attendee_count
+      query = query + attendee_count_query(attendee_count)
     end
     if event_type
       query = query + event_type_query(event_type)
@@ -57,7 +57,7 @@ class SeatGeekService
   end
 
   # GET http://api.seatgeek.com/2/events?listing_count.gt=0
-  def listing_count_query(count)
+  def attendee_count_query(count)
     "&listing_count.gt=#{count}"
   end
 

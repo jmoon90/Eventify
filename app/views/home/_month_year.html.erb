@@ -1,0 +1,11 @@
+<div class='row' id='eventMonthYearPage'>
+  <h2>What Type of Event would you like to see?</h2>
+  <br>
+  <ul id='listOfMonthYear'>
+    <% @month_of_the_year.each do |moy| %>
+      <div data-event-type='<%= moy[:value] %>' class="col-lg-4" id='monthYear'>
+        <li><%= moy[:name] %></li>
+      </div>
+    <% end %>
+  </ul>
+</div>

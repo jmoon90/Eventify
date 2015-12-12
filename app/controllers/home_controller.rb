@@ -2,8 +2,8 @@ class HomeController < ApplicationController
   SEATGEEK_BASE_URL = 'http://api.seatgeek.com/2/taxonomies'
   def index
     @month_of_the_year = month_of_the_year
-    @state = state
-    @listing_count = listing_count
+    @states = states
+    @attendee_count = attendee_count
     @event_type = event_type
   end
 
@@ -24,7 +24,7 @@ class HomeController < ApplicationController
                           {name: 'Dec 2016', value: '2016-12'}]
   end
 
-  def state
+  def states
     # @state = [{:state_name=>"AL"}, {:state_name=>"MT"}, {:state_name=>"AK"}, {:state_name=>"NE"},
     #           {:state_name=>"AZ"}, {:state_name=>"NV"}, {:state_name=>"AR"}, {:state_name=>"NH"},
     #           {:state_name=>"CA"}, {:state_name=>"NJ"}, {:state_name=>"CO"}, {:state_name=>"NM"},
@@ -41,23 +41,31 @@ class HomeController < ApplicationController
     [{:state_name=>"NY"}, {:state_name=>"CA"}, {:state_name=>"PA"}, {:state_name=>"FL"}]
   end
 
-  def listing_count
-    @listing_count = [{listing_count: 1},
-                      {listing_count: 2},
-                      {listing_count: 3},
-                      {listing_count: 4},
-                      {listing_count: 5},
-                      {listing_count: 6},
-                      {listing_count: 7},
-                      {listing_count: 8},
-                      {listing_count: 9},
-                      {listing_count: 10},
-                      {listing_count: 11},
-                      {listing_count: 12}]
+  def attendee_count
+    @attendee_count = [{attendee_count: 1},
+                      {attendee_count: 2},
+                      {attendee_count: 3},
+                      {attendee_count: 4},
+                      {attendee_count: 5},
+                      {attendee_count: 6},
+                      {attendee_count: 7},
+                      {attendee_count: 8},
+                      {attendee_count: 9},
+                      {attendee_count: 10},
+                      {attendee_count: 11},
+                      {attendee_count: 12}]
   end
 
   def event_type
     @seat_geek_service = SeatGeekService.new(base_url: SEATGEEK_BASE_URL)
     @seat_geek_service.run['taxonomies']
+  end
+
+  private
+
+#createa object that has event type + that event's image
+#NBA - golden state vs lakers game image
+  def build_event
+    @seat_geek_service
   end
 end

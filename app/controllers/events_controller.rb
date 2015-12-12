@@ -22,7 +22,7 @@ class EventsController < ApplicationController
     @seat_geek_service = SeatGeekService.new(base_url: SEATGEEK_BASE_URL,
                                              month_of_the_year: params['month_of_the_year'],
                                              state: params['state'],
-                                             listing_count: params['listing_count'],
+                                             listing_count: params['attendee_count'],
                                              event_type: params['event_type'])
   end
 end

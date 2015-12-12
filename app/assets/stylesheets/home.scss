@@ -7,7 +7,6 @@ html body {
 body {
   color: #fff;
   text-align: center;
-  // background: url('http://sosarl.org/wp-content/uploads/2014/07/upcoming-events.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -22,8 +21,7 @@ body {
     font-size: 25px;
   }
 }
-//
-// /* Extra markup and styles for table-esque vertical and horizontal centering */
+
 .site-wrapper {
   display: table;
   width: 100%;
@@ -39,7 +37,16 @@ body {
   margin-left: auto;
 }
 
-/* Padding for spacing */
 .inner {
   padding: 30px;
+}
+
+
+.event-partials {
+ ul li {
+  font-size: 20px;
+ }
+ #statesPage, #eventMonthYearPage, #attendeePartial {
+    display: none;
+  }
 }

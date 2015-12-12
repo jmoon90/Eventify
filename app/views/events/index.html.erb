@@ -1,9 +1,7 @@
 <div class="container marketing">
   <% if @events_in_groups.empty? %>
-
     <h2> Looks like there are no <%= @params['event_type'] %> events for <%= @params['month_of_the_year'] %></h3>
     <h4><%= link_to 'Restart', root_path(@params) %></h4>
-
   <% else %>
     <% @events_in_groups.each do |groups_of_three_events| %>
       <div class="row">

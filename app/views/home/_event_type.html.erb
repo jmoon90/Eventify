@@ -1,0 +1,11 @@
+<div class='row' id='eventTypePage'>
+  <h2>What Type of Event would you like to see?</h2>
+  <br>
+  <ul id='listOfEventTypes'>
+    <% @event_type.each do |type| %>
+      <div data-event-type='<%= type['name'] %>' class="col-lg-4" id='eventType'>
+        <li> <%= type['name'] %></li>
+      </div>
+    <% end %>
+  </ul>
+</div>

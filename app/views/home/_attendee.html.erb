@@ -1,0 +1,11 @@
+<div class='row' id='attendeePartial'>
+  <h2>How many people are attending?</h2>
+  <br>
+  <ul id='attendeeCount'>
+    <% @attendee_count.each do |count| %>
+      <div data-event-type='<%= count[:attendee_count] %>' class="col-lg-4" id='attendeeCount'>
+        <li> <%= count[:attendee_count] %></li>
+      </div>
+    <% end %>
+  </ul>
+</div>
