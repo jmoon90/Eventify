@@ -27,7 +27,7 @@
   }
 
   function attendeePartial() {
-    var attendeeCount = document.getElementById('attendeeCount').children;
+    var attendeeCount = document.getElementById('attendeeCounts').children;
 
     for (var i = 0; i < attendeeCount.length; i++) (function(n){
       attendeeCount[n].addEventListener('click', function() {

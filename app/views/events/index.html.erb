@@ -8,7 +8,7 @@
         <% groups_of_three_events.each do |event| %>
           <div class="col-lg-4">
             <% event["performers"].detect do |performer| %>
-              <a href='<%= event["url"] %>'><img src="<%= performer['image'] || 'https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tommy-castro-91e9a3/7314/huge.jpg' %>"></a>
+              <a href='<%= event["url"] %>' target="_blank"><img src="<%= performer['image'] || 'https://chairnerd.global.ssl.fastly.net/images/performers-landscape/tommy-castro-91e9a3/7314/huge.jpg' %>"></a>
             <% end %>
             <h2><%= event["title"] %></h2>
           </div>
