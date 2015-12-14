@@ -20,7 +20,7 @@
     for (var i = 0; i < eventType.length; i++) (function(n){
       eventType[n].addEventListener('click', function() {
         eventTypeValue = eventType[n].dataset.eventType;
-        document.getElementById('eventTypePage').style.display = 'none';
+        document.getElementById('eventTypePartial').style.display = 'none';
         document.getElementById('attendeePartial').style.display = 'block';
       }, false);
     })(i);
@@ -32,7 +32,7 @@
     for (var i = 0; i < attendeeCount.length; i++) (function(n){
       attendeeCount[n].addEventListener('click', function() {
         attendeeValue = attendeeCount[n].dataset.eventType;
-        document.getElementById('eventMonthYearPage').style.display = 'block';
+        document.getElementById('eventMonthYearPartial').style.display = 'block';
         document.getElementById('attendeePartial').style.display = 'none';
       }, false);
     })(i);
@@ -44,8 +44,8 @@
     for (var i = 0; i < listOfMonthyear.length; i++) (function(n){
       listOfMonthyear[n].addEventListener('click', function() {
         monthYearValue = listOfMonthyear[n].dataset.eventType;
-        document.getElementById('statesPage').style.display = 'block';
-        document.getElementById('eventMonthYearPage').style.display = 'none';
+        document.getElementById('statesPartial').style.display = 'block';
+        document.getElementById('eventMonthYearPartial').style.display = 'none';
       }, false);
     })(i);
   }
@@ -56,17 +56,14 @@
     for (var i = 0; i < listOfStates.length; i++) (function(n){
       listOfStates[n].addEventListener('click', function() {
         statesValue = listOfStates[n].dataset.eventType;
-        document.getElementById('statesPage').style.display = 'none';
+        document.getElementById('statesPartial').style.display = 'none';
         submitValuesToSeatGeek();
       }, false);
     })(i);
   }
 
   function submitValuesToSeatGeek() {
-    console.log('eventType ', eventTypeValue);
-    console.log('attendee ',attendeeValue);
-    console.log('monthYear ',monthYearValue);
-    console.log('state ',statesValue);
+    window.location.href = '/events?' +  'month_of_the_year=' + monthYearValue + '&state=' + statesValue + '&attendee_count=' + attendeeValue + '&event_type=' + eventTypeValue;
   }
 
   $(document).ready(function() {

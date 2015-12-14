@@ -45,8 +45,9 @@ body {
 .event-partials {
  ul li {
   font-size: 20px;
+  list-style: none;
  }
- #statesPage, #eventMonthYearPage, #attendeePartial {
+ #statesPartial, #eventMonthYearPartial, #attendeePartial {
     display: none;
   }
 }
