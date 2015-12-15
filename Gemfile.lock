@@ -148,7 +148,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    seat_geek (0.2.4)
+    seat_geek (0.2.5)
       oj
       scoped_attr_accessor
       typhoeus
