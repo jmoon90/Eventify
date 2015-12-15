@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -36,3 +37,6 @@ gem "typhoeus"
 
 #seatgeek gem
 gem 'seat_geek'
+
+#monitor
+gem 'rollbar', '~> 2.4.0'

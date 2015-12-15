@@ -57,15 +57,6 @@ class HomeController < ApplicationController
   end
 
   def event_type
-    @seat_geek_service = SeatGeekService.new(base_url: SEATGEEK_BASE_URL)
-    @seat_geek_service.run['taxonomies']
-  end
-
-  private
-
-#createa object that has event type + that event's image
-#NBA - golden state vs lakers game image
-  def build_event
-    @seat_geek_service
+    @event_type = SeatGeek.get_event_types['taxonomies']
   end
 end

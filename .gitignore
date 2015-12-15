@@ -13,3 +13,5 @@
 /tmp
 *.byebug
 /byebug/
+
+.env

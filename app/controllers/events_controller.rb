@@ -15,14 +15,10 @@ class EventsController < ApplicationController
   private
 
   def events_list
-    seat_geek_service.run
-  end
-
-  def seat_geek_service
-    @seat_geek_service = SeatGeekService.new(base_url: SEATGEEK_BASE_URL,
-                                             month_of_the_year: params['month_of_the_year'],
-                                             state: params['state'],
-                                             attendee_count: params['attendee_count'],
-                                             event_type: params['event_type'])
+     SeatGeek.get_events(base_url: SEATGEEK_BASE_URL,
+                         month_of_the_year: params['month_of_the_year'],
+                         state: params['state'],
+                         attendee_count: params['attendee_count'],
+                         event_type: params['event_type'])
   end
 end
