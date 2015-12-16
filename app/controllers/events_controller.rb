@@ -15,10 +15,10 @@ class EventsController < ApplicationController
   private
 
   def events_list
-     SeatGeek.get_events(base_url: SEATGEEK_BASE_URL,
-                         month_of_the_year: params['month_of_the_year'],
+     SeatGeek.get_events(month_of_the_year: params['month_of_the_year'],
                          state: params['state'],
                          attendee_count: params['attendee_count'],
-                         event_type: params['event_type'])
+                         event_type: params['event_type'],
+                         seat_geek_partner_id: ENV["SEAT_GEEK_PARTNER_ID"])
   end
 end
