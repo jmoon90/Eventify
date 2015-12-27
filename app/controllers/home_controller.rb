@@ -57,6 +57,6 @@ class HomeController < ApplicationController
   end
 
   def event_type
-    @event_type = SeatGeek.get_taxonomies['taxonomies']
+    @event_type = SeatGeek::Taxonomy.new.all['taxonomies']
   end
 end
