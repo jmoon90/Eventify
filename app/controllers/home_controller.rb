@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
-  SEATGEEK_BASE_URL = 'http://api.seatgeek.com/2/taxonomies'
+  SEATGEEK_BASE_URL = 'https://api.seatgeek.com/2/taxonomies'
   def index
+     byebug
     @month_of_the_year = month_of_the_year
     @states = states
     @attendee_count = attendee_count
@@ -57,6 +58,6 @@ class HomeController < ApplicationController
   end
 
   def event_type
-    @event_type = SeatGeek::Taxonomy.new.all['taxonomies']
+    @event_type = [] #SeatGeek::Taxonomy.new.all['taxonomies']
   end
 end
